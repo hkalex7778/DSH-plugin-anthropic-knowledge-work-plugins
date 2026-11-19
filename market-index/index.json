@@ -1,0 +1,110 @@
+{
+  "format": 1,
+  "title": {
+    "en": "DSH role plugins",
+    "zh": "DSH 岗位插件"
+  },
+  "description": {
+    "en": "Role-oriented plugin packs for non-technical colleagues, ported from anthropics/knowledge-work-plugins (Apache-2.0).",
+    "zh": "面向非技术同事的岗位插件包，移植自 anthropics/knowledge-work-plugins（Apache-2.0）。"
+  },
+  "metadata": {
+    "categories": {
+      "productivity": {
+        "title": {
+          "en": "Productivity",
+          "zh": "效率"
+        }
+      },
+      "data": {
+        "title": {
+          "en": "Data",
+          "zh": "数据"
+        }
+      }
+    },
+    "labels": {
+      "chinese": {
+        "title": {
+          "en": "Chinese-first",
+          "zh": "中文优先"
+        }
+      },
+      "role-plugin": {
+        "title": {
+          "en": "Role plugin",
+          "zh": "岗位插件"
+        }
+      },
+      "no-subscription": {
+        "title": {
+          "en": "No Claude subscription",
+          "zh": "无需 Claude 订阅"
+        }
+      }
+    },
+    "sortKeys": {
+      "published": {
+        "title": {
+          "en": "Publish date",
+          "zh": "发布日期"
+        },
+        "order": "desc"
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-knowledge-work-data",
+      "title": {
+        "en": "Data analyst role plugin",
+        "zh": "数据分析师岗位插件"
+      },
+      "description": {
+        "en": "A data-analysis role pack for non-technical colleagues: turns exploring data, writing SQL, making charts and dashboards, and validating an analysis into loadable SOP skills, and adds a Data analyst agent preset you can switch to per session. Its skills appear only in sessions that select that preset, so ordinary sessions are unchanged. Skill bodies are ported from the data plugin of anthropics/knowledge-work-plugins (Apache-2.0), localised to Chinese, and rewritten against DSH's bundled Python environment and Office delivery tools — no Claude subscription required. Optional connectors: add a data-warehouse MCP server in the MCP settings page for direct queries; without one, pasting query results or uploading CSV/Excel files still works.",
+        "zh": "给非技术同事的数据分析岗位包：把「探索数据、写 SQL、出图表、做仪表盘、校验结论」变成可加载的中文 SOP 技能，并新增一个「数据分析师」Agent 预设（可在会话的模式选择里切换）。技能只在该预设的会话里出现，不影响普通会话。技能正文移植自 anthropics/knowledge-work-plugins 的 data 插件（Apache-2.0），已中文化并改用 DSH 自带的 Python 环境与 Office 交付工具，不需要 Claude 订阅。可选连接器：需要直连数仓时，自己在设置的 MCP 页面添加对应 MCP 服务器；未连接时贴结果或上传 CSV/Excel 也能用。"
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDM2IDM2IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRhdGEgYW5hbHlzdCByb2xlIHBsdWdpbiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Imt3ZGRhdGEtYmFyIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzVCOEZCMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMzRjZCODciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIGZpbGw9InVybCgja3dkZGF0YS1iYXIpIj4KICAgIDxyZWN0IHg9IjYiIHk9IjIwIiB3aWR0aD0iNSIgaGVpZ2h0PSIxMCIgcng9IjEuNSIvPgogICAgPHJlY3QgeD0iMTUuNSIgeT0iMTUiIHdpZHRoPSI1IiBoZWlnaHQ9IjE1IiByeD0iMS41Ii8+CiAgICA8cmVjdCB4PSIyNSIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjciIHJ4PSIxLjUiLz4KICA8L2c+CiAgPHBhdGggZD0iTTcgMTMgMTQgOGw1LjUgNC41TDI5IDQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0MyNzAzQiIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K",
+      "author": "unnamed",
+      "repository": {
+        "url": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins",
+        "directory": "dsh-knowledge-work-data"
+      },
+      "metadata": {
+        "category": "data",
+        "keywords": [
+          "data",
+          "analyst",
+          "sql",
+          "chart",
+          "role",
+          "岗位",
+          "数据分析"
+        ],
+        "labels": [
+          "chinese",
+          "role-plugin",
+          "no-subscription"
+        ],
+        "sortKeys": {
+          "published": 1795075200
+        }
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1795075200,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins",
+            "commit": "d3248470655aea8785cd8e17bc340ddb4d99817d",
+            "path": "dsh-knowledge-work-data"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-0"
+          }
+        }
+      ]
+    }
+  ]
+}
