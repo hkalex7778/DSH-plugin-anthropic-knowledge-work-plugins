@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Data analyst role plugin",
+    "description": "A data-analysis role pack for non-technical colleagues: turns exploring data, writing SQL, making charts and dashboards, and validating an analysis into loadable SOP skills, and adds a Data analyst agent preset you can switch to per session. Its skills appear only in sessions that select that preset, so ordinary sessions are unchanged. Skill bodies are ported from the data plugin of anthropics/knowledge-work-plugins (Apache-2.0), localised to Chinese, and rewritten against DSH's bundled Python environment and Office delivery tools — no Claude subscription required. Optional connectors: add a data-warehouse MCP server in the MCP settings page for direct queries; without one, pasting query results or uploading CSV/Excel files still works."
+  }
+}

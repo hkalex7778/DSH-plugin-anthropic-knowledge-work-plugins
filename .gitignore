@@ -1,0 +1,7 @@
+# Python bytecode that must never ship inside a plugin bundle
+__pycache__/
+*.pyc
+
+# Local scratch
+.tmp-*/
+*.log

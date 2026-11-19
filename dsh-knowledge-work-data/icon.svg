@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" role="img" aria-label="Data analyst role plugin">
+  <defs>
+    <linearGradient id="kwddata-bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5B8FB0"/>
+      <stop offset="1" stop-color="#3F6B87"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#kwddata-bar)">
+    <rect x="6" y="20" width="5" height="10" rx="1.5"/>
+    <rect x="15.5" y="15" width="5" height="15" rx="1.5"/>
+    <rect x="25" y="23" width="5" height="7" rx="1.5"/>
+  </g>
+  <path d="M7 13 14 8l5.5 4.5L29 4" fill="none" stroke="#C2703B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

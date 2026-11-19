@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "数据分析师岗位插件",
+    "description": "给非技术同事的数据分析岗位包：把「探索数据、写 SQL、出图表、做仪表盘、校验结论」变成可加载的中文 SOP 技能，并新增一个「数据分析师」Agent 预设（可在会话的模式选择里切换）。技能只在该预设的会话里出现，不影响普通会话。技能正文移植自 anthropics/knowledge-work-plugins 的 data 插件（Apache-2.0），已中文化并改用 DSH 自带的 Python 环境与 Office 交付工具，不需要 Claude 订阅。可选连接器：需要直连数仓时，自己在设置的 MCP 页面添加对应 MCP 服务器；未连接时贴结果或上传 CSV/Excel 也能用。"
+  }
+}

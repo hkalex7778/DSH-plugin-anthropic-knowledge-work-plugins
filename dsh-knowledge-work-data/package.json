@@ -1,0 +1,47 @@
+{
+  "name": "dsh-knowledge-work-data",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "数据分析师岗位插件：中文岗位技能 + 「数据分析师」Agent preset，移植自 anthropics/knowledge-work-plugins (data, Apache-2.0)",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "assets",
+    "icon.svg",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md",
+    "INSTALL-CHECKLIST.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "Apache-2.0",
+  "author": "hkalex7778",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins.git",
+    "directory": "dsh-knowledge-work-data"
+  },
+  "bugs": {
+    "url": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins/issues"
+  },
+  "homepage": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "data-analyst",
+    "knowledge-work",
+    "chinese"
+  ]
+}

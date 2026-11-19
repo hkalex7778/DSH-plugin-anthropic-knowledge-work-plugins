@@ -1,0 +1,10 @@
+# Keep bundle sources byte-stable regardless of the checker's OS.
+# The DSH bundle loader parses cordis.patch.yml and index.js; forcing LF avoids
+# CRLF-dependent surprises when installing from a Git commit.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
