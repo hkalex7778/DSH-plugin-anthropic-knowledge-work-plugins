@@ -1,0 +1,147 @@
+# dsh-knowledge-work-operations — bundle patch layer
+#
+# Inserts one Agent preset declaration. The岗位 skill provider is mounted
+# *inside* the preset composition, so its skills land in that preset's scope
+# layer only: a session that selects 「运营专员」 sees them, a normal
+# Standard session does not. This mirrors knowledge-work-plugins'
+# "install per job role" shape without polluting the global skill catalog.
+#
+# The plugin list mirrors the shipped `standard` preset verbatim, plus the
+# persona rewrite and the skill provider row. `@deepseek-ai/dsh-skill`
+# (registry), `skill-filesystem`, `tool-skill`, `skill-office`, `office-kit`,
+# `workspace-dependencies` and the tool packages are already mounted by
+# dsh-base / dsh-web-app, so this bundle declares no dependencies at all:
+# packages shipped with DSH resolve from the installation.
+
+- insert:
+    - id: preset-knowledge-work-operations
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: knowledge-work-operations
+        name: 运营专员
+        description: 岗位插件：做产能规划、变更管理、流程 SOP、风险登记、值班手册、状态汇报与供应商评审，交付可复用的运营文档（中文优先）。
+        order: 21
+        plugins:
+          - id: persona
+            name: '@deepseek-ai/dsh-persona'
+            config:
+              # 岗位规则与交付格式由各运营技能各自承载；persona 只留角色、
+              # 「先加载技能」这条路由指令、和语气，避免两处各写一遍而漂移。
+              prefix: |
+                你是一名运营专员，服务对象是不写代码的业务与管理者（部门负责人、项目经理、行政、采购、合规）。
+
+                动手处理任何运营请求之前，先用 skill 工具加载与本请求最匹配的那个运营技能（产能规划、变更申请、流程 SOP、流程优化、风险评估、值班手册、状态汇报、供应商评审、合规跟踪），按其中模板与规则执行，不要凭记忆发挥。
+
+                语气：中文，结论先行，不堆术语。信息不足时先问清范围与口径，绝不编造数据或凭空承诺。
+          - id: knowledge-work-operations-skills
+            name: 'dsh-knowledge-work-operations'
+          - id: agent-instructions
+            name: '@deepseek-ai/dsh-agent-instructions'
+            config:
+              maxBytes: 65536
+          - id: time-context
+            name: '@deepseek-ai/dsh-time-context'
+          - id: tool-bash
+            name: '@deepseek-ai/dsh-tool-bash'
+            disabled: !!js process.platform === 'win32'
+          - id: tool-pwsh
+            name: '@deepseek-ai/dsh-tool-pwsh'
+            disabled: !!js process.platform !== 'win32'
+          - id: tool-fs
+            name: '@deepseek-ai/dsh-tool-fs'
+            config:
+              applyPatch: false
+          - id: tool-fs-search
+            name: '@deepseek-ai/dsh-tool-fs-search'
+            config:
+              sampleOverCapGlobResults: false
+          - id: tool-jobs
+            name: '@deepseek-ai/dsh-tool-jobs'
+          - id: tool-schedule
+            name: '@deepseek-ai/dsh-tool-schedule'
+          # Default config: includeDefaultRoots is true, so the bundled skill
+          # root ($DSH_BUNDLED_SKILL_DIR) and the project/user roots are scanned.
+          # No !!js resolve here — this bundle must not depend on where the
+          # DSH installation sits relative to the profile directory.
+          - id: skill-filesystem
+            name: '@deepseek-ai/dsh-skill-filesystem'
+          - id: tool-skill
+            name: '@deepseek-ai/dsh-tool-skill'
+          - id: command-goal
+            name: '@deepseek-ai/dsh-command-goal'
+          - id: tool-goal
+            name: '@deepseek-ai/dsh-tool-goal'
+          - id: planning
+            name: cordis:group
+            group: true
+            isolate:
+              planMode: true
+            config:
+              - id: plan-mode
+                name: '@deepseek-ai/dsh-plan-mode'
+          - id: compaction
+            name: cordis:group
+            group: true
+            isolate:
+              compaction: true
+              toolResultPruner: true
+            config:
+              - id: compaction-basic
+                name: '@deepseek-ai/dsh-compaction-basic'
+              - id: command-compact
+                name: '@deepseek-ai/dsh-command-compact'
+              - id: tool-result-pruner
+                name: '@deepseek-ai/dsh-compaction-tool-result-pruner'
+                config:
+                  thresholdChars: 8192
+                  headChars: 4096
+                  tailChars: 1024
+          - id: delegation
+            name: cordis:group
+            group: true
+            isolate:
+              workflowEngine: true
+            config:
+              - id: tool-subagent-control
+                name: '@deepseek-ai/dsh-tool-subagent-control'
+                config:
+                  interrupt: false
+              - id: tool-subagent
+                name: '@deepseek-ai/dsh-tool-subagent'
+                config:
+                  provider: spawn
+                  toolName: subagent
+                  modelSelection: true
+                  modelDiscovery: true
+              - id: tool-subagent-fork
+                name: '@deepseek-ai/dsh-tool-subagent'
+                config:
+                  provider: fork
+                  toolName: subagent_fork
+              - id: workflow-ptc
+                name: '@deepseek-ai/dsh-workflow-ptc'
+                config:
+                  provider: spawn
+              - id: tool-workflow
+                name: '@deepseek-ai/dsh-tool-workflow'
+          - id: tool-ask-user
+            name: '@deepseek-ai/dsh-tool-ask-user'
+          - id: tool-todo
+            name: '@deepseek-ai/dsh-tool-todo'
+            config:
+              allowParallelInProgress: true
+          - id: tool-web
+            name: '@deepseek-ai/dsh-tool-web'
+            config:
+              fetch: true
+              searchTimeoutMs: 60000
+          - id: present
+            name: '@deepseek-ai/dsh-tool-present'
+          - id: tool-office
+            name: '@deepseek-ai/dsh-tool-office'
+          - id: tool-plugin-manager
+            name: '@deepseek-ai/dsh-plugin-manager/tools'
+            disabled: !!js "!ctx.get('profileContext')"
+          - id: tool-plugin-market
+            name: '@deepseek-ai/dsh-plugin-market/tools'
+            disabled: true

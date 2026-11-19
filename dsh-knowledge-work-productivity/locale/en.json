@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Productivity role plugin",
+    "description": "A productivity role pack: turns task tracking, workplace memory (people, projects, shorthand), and a visual dashboard into loadable Chinese SOP skills, and adds a Productivity assistant agent preset you can switch to per session. Its skills appear only in sessions that select that preset, so ordinary sessions are unchanged. Skill bodies are ported from the productivity plugin of anthropics/knowledge-work-plugins (Apache-2.0), localised to Chinese, and rewritten against DSH — no Claude subscription required. Optional connectors: add Slack / Notion / Asana / Linear / Jira / Monday / ClickUp / Google Calendar / Gmail MCP servers in the MCP settings page for automatic sync and deep scans; without any connector, task-management is fully usable and memory-management / start / update degrade to semi-automatic (paste content manually)."
+  }
+}

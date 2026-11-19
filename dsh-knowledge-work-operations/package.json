@@ -1,0 +1,32 @@
+{
+  "name": "dsh-knowledge-work-operations",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "运营专员岗位插件：中文岗位技能 + 「运营专员」Agent preset，移植自 anthropics/knowledge-work-plugins (operations, Apache-2.0)",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "assets",
+    "icon.svg",
+    "LICENSE",
+    "NOTICE.md",
+    "README.md",
+    "INSTALL-CHECKLIST.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.2-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "Apache-2.0"
+}

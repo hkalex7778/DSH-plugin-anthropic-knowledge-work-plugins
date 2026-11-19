@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" role="img" aria-label="Productivity role plugin">
+  <defs>
+    <linearGradient id="kwp-prod-bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5AA08B"/>
+      <stop offset="1" stop-color="#3C7A69"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#kwp-prod-bar)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6" y="7" width="24" height="23" rx="3"/>
+    <path d="M11 15.5l3 3 5-6"/>
+    <path d="M11 24h11"/>
+  </g>
+  <circle cx="27" cy="10" r="4" fill="#C2703B"/>
+</svg>

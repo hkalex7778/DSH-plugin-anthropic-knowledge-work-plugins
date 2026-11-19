@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "效率助手岗位插件",
+    "description": "效率岗位包：把「任务清单、职场记忆（人物/项目/术语速记）、可视化看板」变成可加载的中文 SOP 技能，并新增一个「效率助手」Agent 预设（可在会话的模式选择里切换）。技能只在该预设的会话里出现，不影响普通会话。技能正文移植自 anthropics/knowledge-work-plugins 的 productivity 插件（Apache-2.0），已中文化并适配 DSH，不需要 Claude 订阅。可选连接器：需要在 设置→MCP 连接 Slack / Notion / Asana / Linear / Jira / Monday / ClickUp / Google 日历 / Gmail 才能自动同步与深度扫描；不接连接器时，task-management 完整可用，memory-management / start / update 降级为半自动（需手动粘贴内容）。"
+  }
+}

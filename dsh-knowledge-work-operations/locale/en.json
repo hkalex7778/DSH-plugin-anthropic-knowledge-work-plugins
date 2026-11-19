@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Operations role plugin",
+    "description": "An operations role pack for non-technical colleagues: turns capacity planning, change management, process SOPs, process optimisation, risk assessment, runbooks, status reporting, vendor review, and compliance tracking into loadable SOP skills, and adds an Operations specialist agent preset you can switch to per session. Its skills appear only in sessions that select that preset, so ordinary sessions are unchanged. Skill bodies are ported from the operations plugin of anthropics/knowledge-work-plugins (Apache-2.0), localised to Chinese, with no Claude subscription required. All connectors are optional: where a skill touches calendar/ITSM/project-tracker actions, connect the matching service in the MCP settings page; without one, provide the content manually or paste data and the core workflow still works."
+  }
+}
