@@ -21,6 +21,12 @@
           "en": "Data",
           "zh": "数据"
         }
+      },
+      "operations": {
+        "title": {
+          "en": "Operations",
+          "zh": "运营"
+        }
       }
     },
     "labels": {
@@ -40,6 +46,18 @@
         "title": {
           "en": "No Claude subscription",
           "zh": "无需 Claude 订阅"
+        }
+      },
+      "connector-optional": {
+        "title": {
+          "en": "Connectors optional",
+          "zh": "连接器可选"
+        }
+      },
+      "connector-heavy": {
+        "title": {
+          "en": "Needs connectors",
+          "zh": "需连接器"
         }
       }
     },
@@ -65,7 +83,7 @@
         "zh": "给非技术同事的数据分析岗位包：把「探索数据、写 SQL、出图表、做仪表盘、校验结论」变成可加载的中文 SOP 技能，并新增一个「数据分析师」Agent 预设（可在会话的模式选择里切换）。技能只在该预设的会话里出现，不影响普通会话。技能正文移植自 anthropics/knowledge-work-plugins 的 data 插件（Apache-2.0），已中文化并改用 DSH 自带的 Python 环境与 Office 交付工具，不需要 Claude 订阅。可选连接器：需要直连数仓时，自己在设置的 MCP 页面添加对应 MCP 服务器；未连接时贴结果或上传 CSV/Excel 也能用。"
       },
       "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDM2IDM2IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkRhdGEgYW5hbHlzdCByb2xlIHBsdWdpbiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Imt3ZGRhdGEtYmFyIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzVCOEZCMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMzRjZCODciLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIGZpbGw9InVybCgja3dkZGF0YS1iYXIpIj4KICAgIDxyZWN0IHg9IjYiIHk9IjIwIiB3aWR0aD0iNSIgaGVpZ2h0PSIxMCIgcng9IjEuNSIvPgogICAgPHJlY3QgeD0iMTUuNSIgeT0iMTUiIHdpZHRoPSI1IiBoZWlnaHQ9IjE1IiByeD0iMS41Ii8+CiAgICA8cmVjdCB4PSIyNSIgeT0iMjMiIHdpZHRoPSI1IiBoZWlnaHQ9IjciIHJ4PSIxLjUiLz4KICA8L2c+CiAgPHBhdGggZD0iTTcgMTMgMTQgOGw1LjUgNC41TDI5IDQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0MyNzAzQiIgc3Ryb2tlLXdpZHRoPSIyLjQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K",
-      "author": "unnamed",
+      "author": "hkalex7778",
       "repository": {
         "url": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins",
         "directory": "dsh-knowledge-work-data"
@@ -77,7 +95,6 @@
           "analyst",
           "sql",
           "chart",
-          "role",
           "岗位",
           "数据分析"
         ],
@@ -87,18 +104,116 @@
           "no-subscription"
         ],
         "sortKeys": {
-          "published": 1795075200
+          "published": 1795082400
         }
       },
       "versions": [
         {
           "version": "0.1.0",
-          "publishTimestamp": 1795075200,
+          "publishTimestamp": 1795082400,
           "source": {
             "type": "git",
             "url": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins",
             "commit": "d3248470655aea8785cd8e17bc340ddb4d99817d",
             "path": "dsh-knowledge-work-data"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dsh-knowledge-work-operations",
+      "title": {
+        "en": "Operations role plugin",
+        "zh": "运营专员岗位插件"
+      },
+      "description": {
+        "en": "An operations role pack for non-technical colleagues: turns capacity planning, change management, process SOPs, process optimisation, risk assessment, runbooks, status reporting, vendor review, and compliance tracking into loadable SOP skills, and adds an Operations specialist agent preset you can switch to per session. Its skills appear only in sessions that select that preset, so ordinary sessions are unchanged. Skill bodies are ported from the operations plugin of anthropics/knowledge-work-plugins (Apache-2.0), localised to Chinese, with no Claude subscription required. All connectors are optional: where a skill touches calendar/ITSM/project-tracker actions, connect the matching service in the MCP settings page; without one, provide the content manually or paste data and the core workflow still works.",
+        "zh": "给非技术同事的运营岗位包：把「产能规划、变更管理、流程 SOP、流程优化、风险评估、值班手册、状态汇报、供应商评审、合规跟踪」变成可加载的中文 SOP 技能，并新增一个「运营专员」Agent 预设（可在会话的模式选择里切换）。技能只在该预设的会话里出现，不影响普通会话。技能正文移植自 anthropics/knowledge-work-plugins 的 operations 插件（Apache-2.0），已中文化并去掉 Claude 订阅依赖。连接器全部可选：涉及日历/ITSM/项目跟踪等操作时，需在设置的 MCP 页面自行连接对应服务；未连接时改为手动提供内容或粘贴数据，主体功能照常可用。"
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDM2IDM2IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik9wZXJhdGlvbnMgcm9sZSBwbHVnaW4iPgogIDxkZWZzPgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJrd2RvcHMtZ2VhciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1QjhGQjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM0Y2Qjg3Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8IS0tIGdlYXI6IDggdGVldGggKyBodWIgcmluZyAtLT4KICA8ZyBmaWxsPSJ1cmwoI2t3ZG9wcy1nZWFyKSI+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNiAyMCkiPgogICAgICA8cmVjdCB4PSItMiIgeT0iLTExIiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiByeD0iMSIvPgogICAgICA8cmVjdCB4PSItMiIgeT0iLTExIiB3aWR0aD0iNCIgaGVpZ2h0PSI0IiByeD0iMSIgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIi8+CiAgICAgIDxyZWN0IHg9Ii0yIiB5PSItMTEiIHdpZHRoPSI0IiBoZWlnaHQ9IjQiIHJ4PSIxIiB0cmFuc2Zvcm09InJvdGF0ZSg5MCkiLz4KICAgICAgPHJlY3QgeD0iLTIiIHk9Ii0xMSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgcng9IjEiIHRyYW5zZm9ybT0icm90YXRlKDEzNSkiLz4KICAgICAgPHJlY3QgeD0iLTIiIHk9Ii0xMSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgcng9IjEiIHRyYW5zZm9ybT0icm90YXRlKDE4MCkiLz4KICAgICAgPHJlY3QgeD0iLTIiIHk9Ii0xMSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgcng9IjEiIHRyYW5zZm9ybT0icm90YXRlKDIyNSkiLz4KICAgICAgPHJlY3QgeD0iLTIiIHk9Ii0xMSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgcng9IjEiIHRyYW5zZm9ybT0icm90YXRlKDI3MCkiLz4KICAgICAgPHJlY3QgeD0iLTIiIHk9Ii0xMSIgd2lkdGg9IjQiIGhlaWdodD0iNCIgcng9IjEiIHRyYW5zZm9ybT0icm90YXRlKDMxNSkiLz4KICAgICAgPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMCAtOGE4IDggMCAxIDAgMCAxNiA4IDggMCAwIDAgMC0xNlptMCAzLjJhNC44IDQuOCAwIDEgMSAwIDkuNiA0LjggNC44IDAgMCAxIDAtOS42WiIvPgogICAgPC9nPgogIDwvZz4KICA8IS0tIHByb2Nlc3MgZmxvdyBhcnJvdzogdGhyZWUgbm9kZXMgY29ubmVjdGVkLCBlbmRpbmcgaW4gYW4gYXJyb3doZWFkIC0tPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0MyNzAzQiIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8cGF0aCBkPSJNNCA4aDYiLz4KICAgIDxwYXRoIGQ9Ik0xNCA4aDEwIi8+CiAgICA8cGF0aCBkPSJNMjggOGgzLjUiLz4KICAgIDxwYXRoIGQ9Ik0yOS41IDUuNSAzMi41IDhsLTMgMi41Ii8+CiAgPC9nPgogIDxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMiIgZmlsbD0iI0MyNzAzQiIvPgogIDxjaXJjbGUgY3g9IjI2IiBjeT0iOCIgcj0iMiIgZmlsbD0iI0MyNzAzQiIvPgo8L3N2Zz4=",
+      "author": "hkalex7778",
+      "repository": {
+        "url": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins",
+        "directory": "dsh-knowledge-work-operations"
+      },
+      "metadata": {
+        "category": "operations",
+        "keywords": [
+          "operations",
+          "运营",
+          "流程",
+          "风险"
+        ],
+        "labels": [
+          "chinese",
+          "role-plugin",
+          "no-subscription"
+        ],
+        "sortKeys": {
+          "published": 1795082340
+        }
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1795082340,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins",
+            "commit": "ed15982c87d128af5f6e246e0f8ddfe302fa9572",
+            "path": "dsh-knowledge-work-operations"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "dsh-knowledge-work-productivity",
+      "title": {
+        "en": "Productivity role plugin",
+        "zh": "效率助手岗位插件"
+      },
+      "description": {
+        "en": "A productivity role pack: turns task tracking, workplace memory (people, projects, shorthand), and a visual dashboard into loadable Chinese SOP skills, and adds a Productivity assistant agent preset you can switch to per session. Its skills appear only in sessions that select that preset, so ordinary sessions are unchanged. Skill bodies are ported from the productivity plugin of anthropics/knowledge-work-plugins (Apache-2.0), localised to Chinese, and rewritten against DSH — no Claude subscription required. Optional connectors: add Slack / Notion / Asana / Linear / Jira / Monday / ClickUp / Google Calendar / Gmail MCP servers in the MCP settings page for automatic sync and deep scans; without any connector, task-management is fully usable and memory-management / start / update degrade to semi-automatic (paste content manually).",
+        "zh": "效率岗位包：把「任务清单、职场记忆（人物/项目/术语速记）、可视化看板」变成可加载的中文 SOP 技能，并新增一个「效率助手」Agent 预设（可在会话的模式选择里切换）。技能只在该预设的会话里出现，不影响普通会话。技能正文移植自 anthropics/knowledge-work-plugins 的 productivity 插件（Apache-2.0），已中文化并适配 DSH，不需要 Claude 订阅。可选连接器：需要在 设置→MCP 连接 Slack / Notion / Asana / Linear / Jira / Monday / ClickUp / Google 日历 / Gmail 才能自动同步与深度扫描；不接连接器时，task-management 完整可用，memory-management / start / update 降级为半自动（需手动粘贴内容）。"
+      },
+      "icon": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDM2IDM2IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlByb2R1Y3Rpdml0eSByb2xlIHBsdWdpbiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9Imt3cC1wcm9kLWJhciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1QUEwOEIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjM0M3QTY5Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9InVybCgja3dwLXByb2QtYmFyKSIgc3Ryb2tlLXdpZHRoPSIyLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8cmVjdCB4PSI2IiB5PSI3IiB3aWR0aD0iMjQiIGhlaWdodD0iMjMiIHJ4PSIzIi8+CiAgICA8cGF0aCBkPSJNMTEgMTUuNWwzIDMgNS02Ii8+CiAgICA8cGF0aCBkPSJNMTEgMjRoMTEiLz4KICA8L2c+CiAgPGNpcmNsZSBjeD0iMjciIGN5PSIxMCIgcj0iNCIgZmlsbD0iI0MyNzAzQiIvPgo8L3N2Zz4=",
+      "author": "hkalex7778",
+      "repository": {
+        "url": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins",
+        "directory": "dsh-knowledge-work-productivity"
+      },
+      "metadata": {
+        "category": "productivity",
+        "keywords": [
+          "productivity",
+          "效率",
+          "任务",
+          "记忆"
+        ],
+        "labels": [
+          "chinese",
+          "role-plugin",
+          "no-subscription"
+        ],
+        "sortKeys": {
+          "published": 1795082280
+        }
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1795082280,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/hkalex7778/DSH-plugin-anthropic-knowledge-work-plugins",
+            "commit": "ed15982c87d128af5f6e246e0f8ddfe302fa9572",
+            "path": "dsh-knowledge-work-productivity"
           },
           "engines": {
             "dsh": ">=0.2.2-0"
