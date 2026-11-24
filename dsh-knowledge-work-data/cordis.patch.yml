@@ -79,6 +79,9 @@
             config:
               - id: plan-mode
                 name: '@deepseek-ai/dsh-plan-mode'
+                config:
+                  section: |
+                    You are in plan mode. Explore and design before presenting the complete plan through exit_plan_mode.
           - id: compaction
             name: cordis:group
             group: true

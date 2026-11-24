@@ -26,6 +26,9 @@
     }
   },
   "license": "Apache-2.0",
+  "engines": {
+    "dsh": ">=0.2.2-0"
+  },
   "author": "hkalex7778",
   "repository": {
     "type": "git",
